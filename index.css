@@ -161,9 +161,23 @@
     opacity: 0;
     transform-origin: left;
     transform: scaleX(0); /* Initially hide the text */
-    transition: transform 1s, opacity ;
+   animation: slideAndFade 7s infinite; /* Use the animation */
   }
-  
+
+ @keyframes slideAndFade {
+    0% {
+        transform: scaleX(0);
+        opacity: 0;
+      }
+      50% {
+        transform: scaleX(1.2); /* Slightly overscale */
+        opacity: 1;
+      }
+      100% {
+        transform: scaleX(0); /* Back to initial scale */
+        opacity: 0;
+      }
+  }
   .papa:hover .namepapa {
     transform: scaleX(1); /* Show the text on hover */
     opacity: 1;
